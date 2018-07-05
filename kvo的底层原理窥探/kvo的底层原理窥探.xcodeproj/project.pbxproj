@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		184A6E1720ECA24D00099BA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E1620ECA24D00099BA4 /* AppDelegate.m */; };
+		184A6E1A20ECA24D00099BA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E1920ECA24D00099BA4 /* ViewController.m */; };
+		184A6E1D20ECA24D00099BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A6E1B20ECA24D00099BA4 /* Main.storyboard */; };
+		184A6E1F20ECA25000099BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184A6E1E20ECA25000099BA4 /* Assets.xcassets */; };
+		184A6E2220ECA25000099BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A6E2020ECA25000099BA4 /* LaunchScreen.storyboard */; };
+		184A6E2520ECA25000099BA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E2420ECA25000099BA4 /* main.m */; };
+		184A6E2D20ECA3B100099BA4 /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E2C20ECA3B100099BA4 /* DGPerson.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		184A6E1220ECA24D00099BA4 /* kvo的底层原理窥探.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kvo的底层原理窥探.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		184A6E1520ECA24D00099BA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		184A6E1620ECA24D00099BA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		184A6E1820ECA24D00099BA4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		184A6E1920ECA24D00099BA4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		184A6E1C20ECA24D00099BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		184A6E1E20ECA25000099BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		184A6E2120ECA25000099BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		184A6E2320ECA25000099BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		184A6E2420ECA25000099BA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		184A6E2B20ECA3B100099BA4 /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
+		184A6E2C20ECA3B100099BA4 /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		184A6E0F20ECA24D00099BA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		184A6E0920ECA24D00099BA4 = {
+			isa = PBXGroup;
+			children = (
+				184A6E1420ECA24D00099BA4 /* kvo的底层原理窥探 */,
+				184A6E1320ECA24D00099BA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		184A6E1320ECA24D00099BA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				184A6E1220ECA24D00099BA4 /* kvo的底层原理窥探.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		184A6E1420ECA24D00099BA4 /* kvo的底层原理窥探 */ = {
+			isa = PBXGroup;
+			children = (
+				184A6E1520ECA24D00099BA4 /* AppDelegate.h */,
+				184A6E1620ECA24D00099BA4 /* AppDelegate.m */,
+				184A6E1820ECA24D00099BA4 /* ViewController.h */,
+				184A6E1920ECA24D00099BA4 /* ViewController.m */,
+				184A6E2B20ECA3B100099BA4 /* DGPerson.h */,
+				184A6E2C20ECA3B100099BA4 /* DGPerson.m */,
+				184A6E1B20ECA24D00099BA4 /* Main.storyboard */,
+				184A6E1E20ECA25000099BA4 /* Assets.xcassets */,
+				184A6E2020ECA25000099BA4 /* LaunchScreen.storyboard */,
+				184A6E2320ECA25000099BA4 /* Info.plist */,
+				184A6E2420ECA25000099BA4 /* main.m */,
+			);
+			path = "kvo的底层原理窥探";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		184A6E1120ECA24D00099BA4 /* kvo的底层原理窥探 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 184A6E2820ECA25000099BA4 /* Build configuration list for PBXNativeTarget "kvo的底层原理窥探" */;
+			buildPhases = (
+				184A6E0E20ECA24D00099BA4 /* Sources */,
+				184A6E0F20ECA24D00099BA4 /* Frameworks */,
+				184A6E1020ECA24D00099BA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "kvo的底层原理窥探";
+			productName = "kvo的底层原理窥探";
+			productReference = 184A6E1220ECA24D00099BA4 /* kvo的底层原理窥探.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		184A6E0A20ECA24D00099BA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DG;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = apple;
+				TargetAttributes = {
+					184A6E1120ECA24D00099BA4 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 184A6E0D20ECA24D00099BA4 /* Build configuration list for PBXProject "kvo的底层原理窥探" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 184A6E0920ECA24D00099BA4;
+			productRefGroup = 184A6E1320ECA24D00099BA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				184A6E1120ECA24D00099BA4 /* kvo的底层原理窥探 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		184A6E1020ECA24D00099BA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184A6E2220ECA25000099BA4 /* LaunchScreen.storyboard in Resources */,
+				184A6E1F20ECA25000099BA4 /* Assets.xcassets in Resources */,
+				184A6E1D20ECA24D00099BA4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		184A6E0E20ECA24D00099BA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				184A6E1A20ECA24D00099BA4 /* ViewController.m in Sources */,
+				184A6E2520ECA25000099BA4 /* main.m in Sources */,
+				184A6E1720ECA24D00099BA4 /* AppDelegate.m in Sources */,
+				184A6E2D20ECA3B100099BA4 /* DGPerson.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		184A6E1B20ECA24D00099BA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184A6E1C20ECA24D00099BA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		184A6E2020ECA25000099BA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				184A6E2120ECA25000099BA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		184A6E2620ECA25000099BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		184A6E2720ECA25000099BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		184A6E2920ECA25000099BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "kvo的底层原理窥探/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.computer.ABC.kvo-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		184A6E2A20ECA25000099BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "kvo的底层原理窥探/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.my.computer.ABC.kvo-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		184A6E0D20ECA24D00099BA4 /* Build configuration list for PBXProject "kvo的底层原理窥探" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184A6E2620ECA25000099BA4 /* Debug */,
+				184A6E2720ECA25000099BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		184A6E2820ECA25000099BA4 /* Build configuration list for PBXNativeTarget "kvo的底层原理窥探" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				184A6E2920ECA25000099BA4 /* Debug */,
+				184A6E2A20ECA25000099BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 184A6E0A20ECA24D00099BA4 /* Project object */;
+}
