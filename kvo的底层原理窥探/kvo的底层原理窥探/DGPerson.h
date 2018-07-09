@@ -14,6 +14,8 @@
  年龄
  */
 @property (assign, nonatomic) int age;
+@property (assign, nonatomic) int weight;
+@property (assign, nonatomic) int height;
 
 
 @end

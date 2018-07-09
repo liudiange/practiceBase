@@ -7,22 +7,33 @@
 //
 
 #import "ViewController.h"
+#import "DGPerson.h"
+#import "DGPerson+test.h"
+
+//struct _category_t {
+//    const char *name;
+//    struct _class_t *cls;
+//    const struct _method_list_t *instance_methods;
+//    const struct _method_list_t *class_methods;
+//    const struct _protocol_list_t *protocols;
+//    const struct _prop_list_t *properties;
+//};
 
 @interface ViewController ()
 
-@end
 
+
+@end
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    DGPerson *person = [[DGPerson alloc] init];
+    [person test];
+    
+    
 }
 
 

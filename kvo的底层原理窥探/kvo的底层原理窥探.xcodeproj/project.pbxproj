@@ -14,6 +14,10 @@
 		184A6E2220ECA25000099BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A6E2020ECA25000099BA4 /* LaunchScreen.storyboard */; };
 		184A6E2520ECA25000099BA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E2420ECA25000099BA4 /* main.m */; };
 		184A6E2D20ECA3B100099BA4 /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6E2C20ECA3B100099BA4 /* DGPerson.m */; };
+		187EF1B620F2F7C300C84901 /* DGStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1B520F2F7C300C84901 /* DGStudent.m */; };
+		187EF1BA20F2FAB000C84901 /* DGTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1B820F2FAB000C84901 /* DGTwoViewController.m */; };
+		187EF1BB20F2FAB000C84901 /* DGTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187EF1B920F2FAB000C84901 /* DGTwoViewController.xib */; };
+		187EF1BE20F2FCAA00C84901 /* DGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1BD20F2FCAA00C84901 /* DGViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,13 @@
 		184A6E2420ECA25000099BA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		184A6E2B20ECA3B100099BA4 /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
 		184A6E2C20ECA3B100099BA4 /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
+		187EF1B420F2F7C300C84901 /* DGStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGStudent.h; sourceTree = "<group>"; };
+		187EF1B520F2F7C300C84901 /* DGStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGStudent.m; sourceTree = "<group>"; };
+		187EF1B720F2FAB000C84901 /* DGTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGTwoViewController.h; sourceTree = "<group>"; };
+		187EF1B820F2FAB000C84901 /* DGTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGTwoViewController.m; sourceTree = "<group>"; };
+		187EF1B920F2FAB000C84901 /* DGTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DGTwoViewController.xib; sourceTree = "<group>"; };
+		187EF1BC20F2FCAA00C84901 /* DGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGViewController.h; sourceTree = "<group>"; };
+		187EF1BD20F2FCAA00C84901 /* DGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +76,15 @@
 				184A6E1620ECA24D00099BA4 /* AppDelegate.m */,
 				184A6E1820ECA24D00099BA4 /* ViewController.h */,
 				184A6E1920ECA24D00099BA4 /* ViewController.m */,
+				187EF1BC20F2FCAA00C84901 /* DGViewController.h */,
+				187EF1BD20F2FCAA00C84901 /* DGViewController.m */,
+				187EF1B720F2FAB000C84901 /* DGTwoViewController.h */,
+				187EF1B820F2FAB000C84901 /* DGTwoViewController.m */,
+				187EF1B920F2FAB000C84901 /* DGTwoViewController.xib */,
 				184A6E2B20ECA3B100099BA4 /* DGPerson.h */,
 				184A6E2C20ECA3B100099BA4 /* DGPerson.m */,
+				187EF1B420F2F7C300C84901 /* DGStudent.h */,
+				187EF1B520F2F7C300C84901 /* DGStudent.m */,
 				184A6E1B20ECA24D00099BA4 /* Main.storyboard */,
 				184A6E1E20ECA25000099BA4 /* Assets.xcassets */,
 				184A6E2020ECA25000099BA4 /* LaunchScreen.storyboard */,
@@ -134,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187EF1BB20F2FAB000C84901 /* DGTwoViewController.xib in Resources */,
 				184A6E2220ECA25000099BA4 /* LaunchScreen.storyboard in Resources */,
 				184A6E1F20ECA25000099BA4 /* Assets.xcassets in Resources */,
 				184A6E1D20ECA24D00099BA4 /* Main.storyboard in Resources */,
@@ -147,7 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187EF1BA20F2FAB000C84901 /* DGTwoViewController.m in Sources */,
 				184A6E1A20ECA24D00099BA4 /* ViewController.m in Sources */,
+				187EF1B620F2F7C300C84901 /* DGStudent.m in Sources */,
+				187EF1BE20F2FCAA00C84901 /* DGViewController.m in Sources */,
 				184A6E2520ECA25000099BA4 /* main.m in Sources */,
 				184A6E1720ECA24D00099BA4 /* AppDelegate.m in Sources */,
 				184A6E2D20ECA3B100099BA4 /* DGPerson.m in Sources */,

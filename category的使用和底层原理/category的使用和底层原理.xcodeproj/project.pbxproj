@@ -13,6 +13,8 @@
 		186A70CF20EF3C1F0091F09B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186A70CE20EF3C1F0091F09B /* Assets.xcassets */; };
 		186A70D220EF3C1F0091F09B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186A70D020EF3C1F0091F09B /* LaunchScreen.storyboard */; };
 		186A70D520EF3C1F0091F09B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70D420EF3C1F0091F09B /* main.m */; };
+		186A70DD20EF3E5C0091F09B /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70DC20EF3E5C0091F09B /* DGPerson.m */; };
+		186A70E020EF3E740091F09B /* DGPerson+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70DF20EF3E740091F09B /* DGPerson+test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,11 @@
 		186A70D120EF3C1F0091F09B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186A70D320EF3C1F0091F09B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186A70D420EF3C1F0091F09B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		186A70DB20EF3E5C0091F09B /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
+		186A70DC20EF3E5C0091F09B /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
+		186A70DE20EF3E740091F09B /* DGPerson+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DGPerson+test.h"; sourceTree = "<group>"; };
+		186A70DF20EF3E740091F09B /* DGPerson+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DGPerson+test.m"; sourceTree = "<group>"; };
+		186A70E120EF45A40091F09B /* DGPerson+test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "DGPerson+test.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,11 @@
 				186A70C620EF3C1D0091F09B /* AppDelegate.m */,
 				186A70C820EF3C1D0091F09B /* ViewController.h */,
 				186A70C920EF3C1D0091F09B /* ViewController.m */,
+				186A70DB20EF3E5C0091F09B /* DGPerson.h */,
+				186A70DC20EF3E5C0091F09B /* DGPerson.m */,
+				186A70DE20EF3E740091F09B /* DGPerson+test.h */,
+				186A70DF20EF3E740091F09B /* DGPerson+test.m */,
+				186A70E120EF45A40091F09B /* DGPerson+test.cpp */,
 				186A70CB20EF3C1D0091F09B /* Main.storyboard */,
 				186A70CE20EF3C1F0091F09B /* Assets.xcassets */,
 				186A70D020EF3C1F0091F09B /* LaunchScreen.storyboard */,
@@ -142,8 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				186A70CA20EF3C1D0091F09B /* ViewController.m in Sources */,
+				186A70E020EF3E740091F09B /* DGPerson+test.m in Sources */,
 				186A70D520EF3C1F0091F09B /* main.m in Sources */,
 				186A70C720EF3C1D0091F09B /* AppDelegate.m in Sources */,
+				186A70DD20EF3E5C0091F09B /* DGPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
