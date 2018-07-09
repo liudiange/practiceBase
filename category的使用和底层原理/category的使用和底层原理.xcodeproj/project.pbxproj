@@ -15,6 +15,7 @@
 		186A70D520EF3C1F0091F09B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70D420EF3C1F0091F09B /* main.m */; };
 		186A70DD20EF3E5C0091F09B /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70DC20EF3E5C0091F09B /* DGPerson.m */; };
 		186A70E020EF3E740091F09B /* DGPerson+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 186A70DF20EF3E740091F09B /* DGPerson+test.m */; };
+		187EF1C120F33D6A00C84901 /* DGPerson+eat.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1C020F33D6A00C84901 /* DGPerson+eat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		186A70DE20EF3E740091F09B /* DGPerson+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DGPerson+test.h"; sourceTree = "<group>"; };
 		186A70DF20EF3E740091F09B /* DGPerson+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DGPerson+test.m"; sourceTree = "<group>"; };
 		186A70E120EF45A40091F09B /* DGPerson+test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "DGPerson+test.cpp"; sourceTree = "<group>"; };
+		187EF1BF20F33D6A00C84901 /* DGPerson+eat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DGPerson+eat.h"; sourceTree = "<group>"; };
+		187EF1C020F33D6A00C84901 /* DGPerson+eat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DGPerson+eat.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				186A70DC20EF3E5C0091F09B /* DGPerson.m */,
 				186A70DE20EF3E740091F09B /* DGPerson+test.h */,
 				186A70DF20EF3E740091F09B /* DGPerson+test.m */,
+				187EF1BF20F33D6A00C84901 /* DGPerson+eat.h */,
+				187EF1C020F33D6A00C84901 /* DGPerson+eat.m */,
 				186A70E120EF45A40091F09B /* DGPerson+test.cpp */,
 				186A70CB20EF3C1D0091F09B /* Main.storyboard */,
 				186A70CE20EF3C1F0091F09B /* Assets.xcassets */,
@@ -154,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186A70CA20EF3C1D0091F09B /* ViewController.m in Sources */,
+				187EF1C120F33D6A00C84901 /* DGPerson+eat.m in Sources */,
 				186A70E020EF3E740091F09B /* DGPerson+test.m in Sources */,
 				186A70D520EF3C1F0091F09B /* main.m in Sources */,
 				186A70C720EF3C1D0091F09B /* AppDelegate.m in Sources */,

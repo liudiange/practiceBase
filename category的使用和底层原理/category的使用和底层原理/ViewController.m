@@ -21,7 +21,7 @@
 
 @interface ViewController ()
 
-
+@property (assign, nonatomic) int weight;
 
 @end
 @implementation ViewController

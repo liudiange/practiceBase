@@ -13,6 +13,6 @@
  测试的方法
  */
 - (void)test{
-    NSLog(@"test 方法 ------ ");
+    NSLog(@"test 方法 ------ test");
 }
 @end
