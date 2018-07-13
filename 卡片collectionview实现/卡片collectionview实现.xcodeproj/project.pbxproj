@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1862B00C20F6E71C00DBF186 /* DGCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862B00B20F6E71C00DBF186 /* DGCardCell.m */; };
+		1862B01020F6F49F00DBF186 /* DGCardCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862B00F20F6F49F00DBF186 /* DGCardCommonModel.m */; };
+		1862B01620F72C3100DBF186 /* DGCardCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862B01520F72C3100DBF186 /* DGCardCollectionView.m */; };
 		187EF1EF20F357F900C84901 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1EE20F357F900C84901 /* AppDelegate.m */; };
 		187EF1F220F357F900C84901 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187EF1F120F357F900C84901 /* ViewController.m */; };
 		187EF1F520F357F900C84901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187EF1F320F357F900C84901 /* Main.storyboard */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1862B00A20F6E71C00DBF186 /* DGCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGCardCell.h; sourceTree = "<group>"; };
+		1862B00B20F6E71C00DBF186 /* DGCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGCardCell.m; sourceTree = "<group>"; };
+		1862B00E20F6F49F00DBF186 /* DGCardCommonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGCardCommonModel.h; sourceTree = "<group>"; };
+		1862B00F20F6F49F00DBF186 /* DGCardCommonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGCardCommonModel.m; sourceTree = "<group>"; };
+		1862B01420F72C3100DBF186 /* DGCardCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGCardCollectionView.h; sourceTree = "<group>"; };
+		1862B01520F72C3100DBF186 /* DGCardCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGCardCollectionView.m; sourceTree = "<group>"; };
 		187EF1EA20F357F900C84901 /* 卡片collectionview实现.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "卡片collectionview实现.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187EF1ED20F357F900C84901 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		187EF1EE20F357F900C84901 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,6 +56,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1862B00D20F6F44500DBF186 /* DGCardlib */ = {
+			isa = PBXGroup;
+			children = (
+				187EF20820F3617100C84901 /* DGCardViewLayout.h */,
+				187EF20920F3617100C84901 /* DGCardViewLayout.m */,
+				1862B00A20F6E71C00DBF186 /* DGCardCell.h */,
+				1862B00B20F6E71C00DBF186 /* DGCardCell.m */,
+				1862B01420F72C3100DBF186 /* DGCardCollectionView.h */,
+				1862B01520F72C3100DBF186 /* DGCardCollectionView.m */,
+			);
+			path = DGCardlib;
+			sourceTree = "<group>";
+		};
 		187EF1E120F357F900C84901 = {
 			isa = PBXGroup;
 			children = (
@@ -66,12 +88,13 @@
 		187EF1EC20F357F900C84901 /* 卡片collectionview实现 */ = {
 			isa = PBXGroup;
 			children = (
+				1862B00D20F6F44500DBF186 /* DGCardlib */,
 				187EF1ED20F357F900C84901 /* AppDelegate.h */,
 				187EF1EE20F357F900C84901 /* AppDelegate.m */,
+				1862B00E20F6F49F00DBF186 /* DGCardCommonModel.h */,
+				1862B00F20F6F49F00DBF186 /* DGCardCommonModel.m */,
 				187EF1F020F357F900C84901 /* ViewController.h */,
 				187EF1F120F357F900C84901 /* ViewController.m */,
-				187EF20820F3617100C84901 /* DGCardViewLayout.h */,
-				187EF20920F3617100C84901 /* DGCardViewLayout.m */,
 				187EF1F320F357F900C84901 /* Main.storyboard */,
 				187EF20320F35BE000C84901 /* DGImageViewCell.h */,
 				187EF20420F35BE000C84901 /* DGImageViewCell.m */,
@@ -156,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1862B00C20F6E71C00DBF186 /* DGCardCell.m in Sources */,
 				187EF20A20F3617100C84901 /* DGCardViewLayout.m in Sources */,
 				187EF1F220F357F900C84901 /* ViewController.m in Sources */,
 				187EF20620F35BE000C84901 /* DGImageViewCell.m in Sources */,
+				1862B01020F6F49F00DBF186 /* DGCardCommonModel.m in Sources */,
+				1862B01620F72C3100DBF186 /* DGCardCollectionView.m in Sources */,
 				187EF1FD20F357FC00C84901 /* main.m in Sources */,
 				187EF1EF20F357F900C84901 /* AppDelegate.m in Sources */,
 			);

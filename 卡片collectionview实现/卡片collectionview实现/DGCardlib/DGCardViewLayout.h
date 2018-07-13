@@ -24,7 +24,7 @@
 /**
  开始显示的下标
  */
-@property (assign, nonatomic) int beginIndex;
+@property (assign, nonatomic) NSInteger beginIndex;
 
 
 

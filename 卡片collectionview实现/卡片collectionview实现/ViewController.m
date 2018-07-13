@@ -9,17 +9,21 @@
 #import "ViewController.h"
 #import "DGImageViewCell.h"
 #import "DGCardViewLayout.h"
+#import "DGCardCommonModel.h"
+#import "DGCardCollectionView.h"
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,DGImageViewCellDelegate>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,DGCardCellDelegate,DGCardCollectionViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *deleteArray;
-@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) DGCardCollectionView *collectionView;
 @property (strong, nonatomic) DGCardViewLayout *cardLayout;
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 @implementation ViewController
-NSString static *cell_id = @"cellID";
+
+static NSString *const cell_id = @"cellID";
+
 -(NSMutableArray *)deleteArray {
     if (!_deleteArray) {
         _deleteArray = [[NSMutableArray alloc] init];
@@ -35,23 +39,26 @@ NSString static *cell_id = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     for (NSInteger index = 0; index < 10; index ++) {
-        [self.dataArray addObject:@"asdasdasd"];
+        DGCardCommonModel *cardCommonModel = [[DGCardCommonModel alloc] init];
+        cardCommonModel.name = [NSString stringWithFormat:@"%zd",index];
+        cardCommonModel.currentIndex = index;
+        [self.dataArray addObject:cardCommonModel];
     }
     
     DGCardViewLayout *cardLayout = [[DGCardViewLayout alloc] init];
-    cardLayout.cardCount = 4;
+    cardLayout.cardCount = 3;
     cardLayout.verticalMargon = 10;
     cardLayout.horizontalMargon = 20;
-    cardLayout.beginIndex = 8;
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 100, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20) collectionViewLayout: cardLayout];
-    collectionView.delegate = self;
+    cardLayout.beginIndex = 0;
+    
+    DGCardCollectionView *collectionView = [[DGCardCollectionView alloc] initWithFrame:CGRectMake(10, 100, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20) collectionViewLayout: cardLayout];
+    collectionView.cardDelegate = self;
     collectionView.dataSource = self;
     collectionView.backgroundColor = [UIColor greenColor];
     [collectionView registerNib:[UINib nibWithNibName:@"DGImageViewCell" bundle:nil] forCellWithReuseIdentifier:cell_id];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     self.cardLayout = cardLayout;
-    
     
 }
 #pragma mark - collectionview的datasource
@@ -61,57 +68,39 @@ NSString static *cell_id = @"cellID";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     DGImageViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cell_id forIndexPath:indexPath];
-    cell.delegate = self;
-    cell.numberLable.text = [NSString stringWithFormat:@"%zd",indexPath.item];
-    cell.currentIndex = indexPath.item;
+    cell.collectionView = self.collectionView;
+    cell.commonModel = self.dataArray[indexPath.item];
     return cell;
 }
-#pragma mark - cell 的delegate
+#pragma mark collectionView 的 delegate
 /**
- 开始往哪个方向添加或者移除
+ 需要刷新collectionview
  
- @param direction 方向
- @param index 下标
- @param cell 当前的cell
+ @param index index
+ @param cardCollectionView collection
+ @param needDeleteArray 需要删除的数组
  */
-- (void)swipDirection:(SwipDirection )direction andIndex:(NSInteger )index cell:(DGImageViewCell *)cell{
-    switch (direction) {
-        case SwipDirectionLeft:
-            {
-                [self.deleteArray addObject:cell];
-                [self reloadCollection:(int)(index + 1)];
-            }
-            break;
-        case SwipDirectionRight:
-        {
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
-#pragma mark - 其他方法的响应
-- (void)reloadCollection:(int )beginIndex{
+- (void)reCreateCollectionView:(NSInteger )index collectionView:(DGCardCollectionView *)cardCollectionView deleteArray:(NSMutableArray <DGCardCell *>*)needDeleteArray{
     
     [self.collectionView removeFromSuperview];
-    self.cardLayout.beginIndex = beginIndex;
-    if (beginIndex == self.dataArray.count) {
-        self.cardLayout.beginIndex = 0;
-    }else if (beginIndex < 0){
-        self.cardLayout.beginIndex = (int)(self.dataArray.count - 1);
-    }
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(10, 100, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20) collectionViewLayout: self.cardLayout];
-    collectionView.delegate = self;
+    self.cardLayout.beginIndex = index;
+    DGCardCollectionView *collectionView = [[DGCardCollectionView alloc] initWithFrame:CGRectMake(10, 100, [UIScreen mainScreen].bounds.size.width - 20, [UIScreen mainScreen].bounds.size.width - 20) collectionViewLayout: self.cardLayout];
+    collectionView.cardDelegate = self;
     collectionView.dataSource = self;
+    collectionView.deleteArray = needDeleteArray;
     collectionView.backgroundColor = [UIColor greenColor];
     [collectionView registerNib:[UINib nibWithNibName:@"DGImageViewCell" bundle:nil] forCellWithReuseIdentifier:cell_id];
     [self.view addSubview:collectionView];
     self.collectionView = collectionView;
     [self.collectionView reloadData];
-
 }
-
-
+/**
+ 卡片调用完成
+ 
+ @param direction 方向
+ @param index index
+ */
+- (void)cardFinishSwipDirection:(CardCollectionSwipDirection )direction index:(NSInteger )index{
+    NSLog(@"is finished index --- %zd",index);
+}
 @end

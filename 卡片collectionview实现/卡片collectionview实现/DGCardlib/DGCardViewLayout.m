@@ -37,11 +37,18 @@
     NSInteger numberCount = [self.collectionView numberOfItemsInSection:0];
     UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     if ((indexPath.item >= self.beginIndex)  && indexPath.item < (self.cardCount + self.beginIndex)) {
+        
         layoutAttributes.hidden = NO;
         layoutAttributes.frame = CGRectMake(self.horizontalMargon*(indexPath.item - self.beginIndex), (self.cardCount + self.beginIndex - 1 - indexPath.item)*self.verticalMargon, self.collectionView.frame.size.width - 2 * self.horizontalMargon * (indexPath.item - self.beginIndex), self.collectionView.frame.size.height -(self.cardCount + self.beginIndex - 1 -indexPath.item)*self.verticalMargon);
+        
+    }else if(indexPath.item >= (self.cardCount + self.beginIndex)){
+        
+        layoutAttributes.hidden = NO;
+        layoutAttributes.frame = CGRectMake(self.horizontalMargon*(self.cardCount), 0, self.collectionView.frame.size.width - 2 * self.horizontalMargon * self.cardCount, self.collectionView.frame.size.height);
+        
     }else{
-        layoutAttributes.frame = CGRectMake(0, 0, 100, 100);
         layoutAttributes.hidden = YES;
+        layoutAttributes.frame = CGRectMake(self.horizontalMargon*(self.cardCount), 0, self.collectionView.frame.size.width - 2 * self.horizontalMargon * self.cardCount, self.collectionView.frame.size.height);
     }
     layoutAttributes.zIndex = numberCount - indexPath.item;
     return layoutAttributes;
