@@ -1,0 +1,8 @@
+use_frameworks!
+platform :ios, '9.0'
+
+target '封装网络请求' do
+	
+	pod 'AFNetworking'
+
+end

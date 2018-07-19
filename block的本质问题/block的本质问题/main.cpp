@@ -106,7 +106,7 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_7dd7a5_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"a = %d -- b = %d",16};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_eefb20_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"age = %d",8};
 
 
 
@@ -32150,32 +32150,61 @@ struct NSUUID_IMPL {
 /* @end */
 
 #pragma clang assume_nonnull end
-int height = 10;
 
+#ifndef _REWRITER_typedef_DGPerson
+#define _REWRITER_typedef_DGPerson
+typedef struct objc_object DGPerson;
+typedef struct {} _objc_exc_DGPerson;
+#endif
+
+struct DGPerson_IMPL {
+	struct NSObject_IMPL NSObject_IVARS;
+};
+
+// @property (assign, nonatomic) int age;
+/* @end */
+
+struct __Block_byref_age_0 {
+  void *__isa; // 0x00007ffeefbff500 8个字节
+__Block_byref_age_0 *__forwarding; // 0x00007ffeefbff508 8个字节
+ int __flags;// 0x00007ffeefbff510 4个字节
+ int __size;// 0x00007ffeefbff514 4个字节
+ int age;// 0x00007ffeefbff518   4个字节
+};
 
 struct __main_block_impl_0 {
   struct __block_impl impl;
   struct __main_block_desc_0* Desc;
-  __main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, int flags=0) {
+  __Block_byref_age_0 *age; // by ref
+  __main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, __Block_byref_age_0 *_age, int flags=0) : age(_age->__forwarding) {
     impl.isa = &_NSConcreteStackBlock;
     impl.Flags = flags;
     impl.FuncPtr = fp;
     Desc = desc;
   }
 };
-static void __main_block_func_0(struct __main_block_impl_0 *__cself, int a, int b) {
+static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
+  __Block_byref_age_0 *age = __cself->age; // bound by ref
 
-            NSLog((NSString *)&__NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_7dd7a5_mi_0,a,b);
+            (age->__forwarding->age) = 20;
+            NSLog((NSString *)&__NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_eefb20_mi_0,(age->__forwarding->age));
         }
+static void __main_block_copy_0(struct __main_block_impl_0*dst, struct __main_block_impl_0*src) {_Block_object_assign((void*)&dst->age, (void*)src->age, 8/*BLOCK_FIELD_IS_BYREF*/);}
+
+static void __main_block_dispose_0(struct __main_block_impl_0*src) {_Block_object_dispose((void*)src->age, 8/*BLOCK_FIELD_IS_BYREF*/);}
 
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
-} __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0)};
+  void (*copy)(struct __main_block_impl_0*, struct __main_block_impl_0*);
+  void (*dispose)(struct __main_block_impl_0*);
+} __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0), __main_block_copy_0, __main_block_dispose_0};
 int main(int argc, const char * argv[]) {
     /* @autoreleasepool */ { __AtAutoreleasePool __autoreleasepool; 
-        void (*myBlock)(int,int) = ((void (*)(int, int))&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA));
-        ((void (*)(__block_impl *, int, int))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock, 10, 10);
+
+        __attribute__((__blocks__(byref))) __Block_byref_age_0 age = {(void*)0,(__Block_byref_age_0 *)&age, 0, sizeof(__Block_byref_age_0), 10};
+        void (*myBlock)(void) = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, (__Block_byref_age_0 *)&age, 570425344));
+        ((void (*)(__block_impl *))((__block_impl *)myBlock)->FuncPtr)((__block_impl *)myBlock);
     }
     return 0;
 }

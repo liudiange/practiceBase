@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B3412920FD8504006FF6CA /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B3412820FD8504006FF6CA /* DGPerson.m */; };
 		18BF40F920F8989E00788E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF40F820F8989E00788E72 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18B3412720FD8504006FF6CA /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
+		18B3412820FD8504006FF6CA /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
 		18BF40F520F8989E00788E72 /* block的本质问题 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "block的本质问题"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF40F820F8989E00788E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18BF40FF20F89C4300788E72 /* main0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main0.cpp; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				18BF410120F8A3DC00788E72 /* main1.cpp */,
 				18BF40FF20F89C4300788E72 /* main0.cpp */,
 				18BF40F820F8989E00788E72 /* main.m */,
+				18B3412720FD8504006FF6CA /* DGPerson.h */,
+				18B3412820FD8504006FF6CA /* DGPerson.m */,
 			);
 			path = "block的本质问题";
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BF40F920F8989E00788E72 /* main.m in Sources */,
+				18B3412920FD8504006FF6CA /* DGPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +253,7 @@
 		18BF40FD20F8989E00788E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -256,7 +262,7 @@
 		18BF40FE20F8989E00788E72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

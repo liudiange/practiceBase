@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DGPerson.h"
 
 //// __block_impl的结构
 //struct __block_impl {
@@ -42,21 +43,77 @@
 //}
 //int height = 10;
 
-typedef void (^TestBlock)(void);
+//typedef void (^TestBlock)(void);
 //TestBlock test(){
 //    int age = 3;
 //    return ^{
 //        NSLog(@"-------------%d",age);
 //    };
 //}
+//typedef void(^MyBlock)(void);
+
+
+struct __Block_byref_age_0 {
+    void *__isa;
+    struct __Block_byref_age_0 *__forwarding;
+    int __flags;
+    int __size;
+    int age;
+};
+struct __block_impl {
+    void *isa;
+    int Flags;
+    int Reserved;
+    void *FuncPtr;
+};
+struct __main_block_desc_0 {
+    size_t reserved;
+    size_t Block_size;
+    void (*copy)(void);
+    void (*dispose)(void);
+};
+struct __main_block_impl_0 {
+    struct __block_impl impl;
+    struct __main_block_desc_0* Desc;
+    struct __Block_byref_age_0 *age; // by ref
+};
+
 
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-        });
+        __block int age = 10;
+        void (^myBlock)(void) = ^(){
+            age = 20;
+            NSLog(@"age = %d",age);
+        };
+        myBlock();
+        
+        // 将block 替换成我们写的那个结构体
+        struct __main_block_impl_0 *block = (__bridge struct __main_block_impl_0 *)myBlock;
+        
+        NSLog(@"age 的 address = %p",&age);
+        
+        
+//        MyBlock myBlock;
+//
+//        {
+//            DGPerson *person = [[DGPerson alloc] init];
+//            person.age = 20;
+////            __weak DGPerson *weakPerson = person;
+//            myBlock = [^{
+//                NSLog(@"age = %d",person.age);
+//            } copy];
+//            [person release];
+//
+//
+//        }
+//        NSLog(@"--------------");
+        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//        });
         
 //        NSArray *array = [NSArray array];
 //        [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
