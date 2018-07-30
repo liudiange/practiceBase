@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DGPerson : NSObject
+
 @property (assign, nonatomic) int age;
+@property (strong, nonatomic) void(^myBlock)(void);
+
 @end

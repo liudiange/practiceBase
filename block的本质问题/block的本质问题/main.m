@@ -83,16 +83,39 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
+        
         DGPerson *person = [[DGPerson alloc] init];
-        __block __weak DGPerson *weakPerson = person;
-        void (^myBlock)(void) = ^(){
-            person.age = 20;
+        __weak typeof(person) weakPerson = person;
+        person.myBlock = [^{
             NSLog(@"age = %d",weakPerson.age);
-        };
-        myBlock();
+        } copy];
+        person.myBlock();
+        [person release];
+        NSLog(@"-------------");
         
+//        __block DGPerson *person = [[DGPerson alloc] init];
+//        person.myBlock = ^{
+//            NSLog(@"age = %d",person.age);
+//            person = nil;
+//        };
+//        person.myBlock();
+//        NSLog(@"-------------");
         
+//        DGPerson *person = [[DGPerson alloc] init];
+//        __weak typeof(person)weakPerspon = person;
+//        person.myBlock = ^{
+//            weakPerspon.age = 20;
+//        };
+//        person.myBlock();
+//        NSLog(@"-------------");
         
+//        DGPerson *person = [[DGPerson alloc] init];
+//        __weak typeof(person)weakPerspon = person;
+//        person.myBlock = ^{
+//            weakPerspon.age = 20;
+//        };
+//        person.myBlock();
+//        NSLog(@"-------------");
         
 //        __block int age = 10;
 //        void (^myBlock)(void) = ^(){

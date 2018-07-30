@@ -9,9 +9,9 @@
 #import "DGPerson.h"
 
 @implementation DGPerson
-//+ (void)load{
-//    NSLog(@"DGPerson --- ") ;
-//}
++ (void)load{
+    NSLog(@"DGPerson --- load") ;
+}
 
 
 + (void)initialize {

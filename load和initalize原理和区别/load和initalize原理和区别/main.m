@@ -15,8 +15,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
      
-        DGStudent *student = [[DGStudent alloc] init];
-        DGPerson *person = [[DGPerson alloc] init];
+//        DGStudent *student = [[DGStudent alloc] init];
+//        DGPerson *person = [[DGPerson alloc] init];
         
         
     }

@@ -9,9 +9,9 @@
 #import "DGStudent.h"
 
 @implementation DGStudent
-//+ (void)load{
-//    NSLog(@"load -- DGStudent --- ");
-//}
++ (void)load{
+    NSLog(@"load -- DGStudent --- ");
+}
 //+ (void)initialize {
 //    NSLog(@"initialize -- DGStudent");
 //}

@@ -106,7 +106,15 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_5fbc31_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"-------------",13};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_DGPerson_795bd3_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"dealloc",7};
+
+
+
+
+
+
+
+
 
 
 
@@ -32154,14 +32162,19 @@ struct NSUUID_IMPL {
 
 #pragma clang assume_nonnull end
 
+
 #ifndef _REWRITER_typedef_DGPerson
 #define _REWRITER_typedef_DGPerson
 typedef struct objc_object DGPerson;
 typedef struct {} _objc_exc_DGPerson;
 #endif
 
+extern "C" unsigned long OBJC_IVAR_$_DGPerson$_age;
+extern "C" unsigned long OBJC_IVAR_$_DGPerson$_myBlock;
 struct DGPerson_IMPL {
 	struct NSObject_IMPL NSObject_IVARS;
+	int _age;
+	void (*_myBlock)();
 };
 
 
@@ -32171,40 +32184,181 @@ struct DGPerson_IMPL {
 /* @end */
 
 
-struct __main_block_impl_0 {
-  struct __block_impl impl;
-  struct __main_block_desc_0* Desc;
-  DGPerson *__strong person;
-  __main_block_impl_0(void *fp, struct __main_block_desc_0 *desc, DGPerson *__strong _person, int flags=0) : person(_person) {
-    impl.isa = &_NSConcreteStackBlock;
-    impl.Flags = flags;
-    impl.FuncPtr = fp;
-    Desc = desc;
-  }
-};
-static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
-  DGPerson *__strong person = __cself->person; // bound by copy
+// @implementation DGPerson
 
-            ((void (*)(id, SEL, int))(void *)objc_msgSend)((id)person, sel_registerName("setAge:"), 20);
-        }
-static void __main_block_copy_0(struct __main_block_impl_0*dst, struct __main_block_impl_0*src) {_Block_object_assign((void*)&dst->person, (void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
+static void _I_DGPerson_dealloc(DGPerson * self, SEL _cmd) {
 
-static void __main_block_dispose_0(struct __main_block_impl_0*src) {_Block_object_dispose((void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_DGPerson_795bd3_mi_0);
 
-static struct __main_block_desc_0 {
-  size_t reserved;
-  size_t Block_size;
-  void (*copy)(struct __main_block_impl_0*, struct __main_block_impl_0*);
-  void (*dispose)(struct __main_block_impl_0*);
-} __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0), __main_block_copy_0, __main_block_dispose_0};
-int main(int argc, const char * argv[]) {
-    /* @autoreleasepool */ { __AtAutoreleasePool __autoreleasepool; 
-
-        DGPerson *person = ((DGPerson *(*)(id, SEL))(void *)objc_msgSend)((id)((DGPerson *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("DGPerson"), sel_registerName("alloc")), sel_registerName("init"));
-        ((void (*)(id, SEL, void (*)()))(void *)objc_msgSend)((id)person, sel_registerName("setMyBlock:"), ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, person, 570425344)));
-        ((void (*(*)(id, SEL))())(void *)objc_msgSend)((id)person, sel_registerName("myBlock"))();
-        NSLog((NSString *)&__NSConstantStringImpl__var_folders_1p_2n5k1fqd4fjd7bg4vz_38qmc0000gn_T_main_5fbc31_mi_0);
-    }
-    return 0;
 }
+
+static int _I_DGPerson_age(DGPerson * self, SEL _cmd) { return (*(int *)((char *)self + OBJC_IVAR_$_DGPerson$_age)); }
+static void _I_DGPerson_setAge_(DGPerson * self, SEL _cmd, int age) { (*(int *)((char *)self + OBJC_IVAR_$_DGPerson$_age)) = age; }
+
+static void(* _I_DGPerson_myBlock(DGPerson * self, SEL _cmd) )(){ return (*(void (**)())((char *)self + OBJC_IVAR_$_DGPerson$_myBlock)); }
+static void _I_DGPerson_setMyBlock_(DGPerson * self, SEL _cmd, void (*myBlock)()) { (*(void (**)())((char *)self + OBJC_IVAR_$_DGPerson$_myBlock)) = myBlock; }
+// @end
+
+struct _prop_t {
+	const char *name;
+	const char *attributes;
+};
+
+struct _protocol_t;
+
+struct _objc_method {
+	struct objc_selector * _cmd;
+	const char *method_type;
+	void  *_imp;
+};
+
+struct _protocol_t {
+	void * isa;  // NULL
+	const char *protocol_name;
+	const struct _protocol_list_t * protocol_list; // super protocols
+	const struct method_list_t *instance_methods;
+	const struct method_list_t *class_methods;
+	const struct method_list_t *optionalInstanceMethods;
+	const struct method_list_t *optionalClassMethods;
+	const struct _prop_list_t * properties;
+	const unsigned int size;  // sizeof(struct _protocol_t)
+	const unsigned int flags;  // = 0
+	const char ** extendedMethodTypes;
+};
+
+struct _ivar_t {
+	unsigned long int *offset;  // pointer to ivar offset location
+	const char *name;
+	const char *type;
+	unsigned int alignment;
+	unsigned int  size;
+};
+
+struct _class_ro_t {
+	unsigned int flags;
+	unsigned int instanceStart;
+	unsigned int instanceSize;
+	const unsigned char *ivarLayout;
+	const char *name;
+	const struct _method_list_t *baseMethods;
+	const struct _objc_protocol_list *baseProtocols;
+	const struct _ivar_list_t *ivars;
+	const unsigned char *weakIvarLayout;
+	const struct _prop_list_t *properties;
+};
+
+struct _class_t {
+	struct _class_t *isa;
+	struct _class_t *superclass;
+	void *cache;
+	void *vtable;
+	struct _class_ro_t *ro;
+};
+
+struct _category_t {
+	const char *name;
+	struct _class_t *cls;
+	const struct _method_list_t *instance_methods;
+	const struct _method_list_t *class_methods;
+	const struct _protocol_list_t *protocols;
+	const struct _prop_list_t *properties;
+};
+extern "C" __declspec(dllimport) struct objc_cache _objc_empty_cache;
+#pragma warning(disable:4273)
+
+extern "C" unsigned long int OBJC_IVAR_$_DGPerson$_age __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct DGPerson, _age);
+extern "C" unsigned long int OBJC_IVAR_$_DGPerson$_myBlock __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct DGPerson, _myBlock);
+
+static struct /*_ivar_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _prop_t)
+	unsigned int count;
+	struct _ivar_t ivar_list[2];
+} _OBJC_$_INSTANCE_VARIABLES_DGPerson __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_ivar_t),
+	2,
+	{{(unsigned long int *)&OBJC_IVAR_$_DGPerson$_age, "_age", "i", 2, 4},
+	 {(unsigned long int *)&OBJC_IVAR_$_DGPerson$_myBlock, "_myBlock", "@?", 3, 8}}
+};
+
+static struct /*_method_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _objc_method)
+	unsigned int method_count;
+	struct _objc_method method_list[5];
+} _OBJC_$_INSTANCE_METHODS_DGPerson __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_objc_method),
+	5,
+	{{(struct objc_selector *)"dealloc", "v16@0:8", (void *)_I_DGPerson_dealloc},
+	{(struct objc_selector *)"age", "i16@0:8", (void *)_I_DGPerson_age},
+	{(struct objc_selector *)"setAge:", "v20@0:8i16", (void *)_I_DGPerson_setAge_},
+	{(struct objc_selector *)"myBlock", "@?16@0:8", (void *)_I_DGPerson_myBlock},
+	{(struct objc_selector *)"setMyBlock:", "v24@0:8@?16", (void *)_I_DGPerson_setMyBlock_}}
+};
+
+static struct /*_prop_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _prop_t)
+	unsigned int count_of_properties;
+	struct _prop_t prop_list[2];
+} _OBJC_$_PROP_LIST_DGPerson __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_prop_t),
+	2,
+	{{"age","Ti,N,V_age"},
+	{"myBlock","T@?,C,N,V_myBlock"}}
+};
+
+static struct _class_ro_t _OBJC_METACLASS_RO_$_DGPerson __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	1, sizeof(struct _class_t), sizeof(struct _class_t), 
+	0, 
+	"DGPerson",
+	0, 
+	0, 
+	0, 
+	0, 
+	0, 
+};
+
+static struct _class_ro_t _OBJC_CLASS_RO_$_DGPerson __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	0, __OFFSETOFIVAR__(struct DGPerson, _age), sizeof(struct DGPerson_IMPL), 
+	0, 
+	"DGPerson",
+	(const struct _method_list_t *)&_OBJC_$_INSTANCE_METHODS_DGPerson,
+	0, 
+	(const struct _ivar_list_t *)&_OBJC_$_INSTANCE_VARIABLES_DGPerson,
+	0, 
+	(const struct _prop_list_t *)&_OBJC_$_PROP_LIST_DGPerson,
+};
+
+extern "C" __declspec(dllimport) struct _class_t OBJC_METACLASS_$_NSObject;
+
+extern "C" __declspec(dllexport) struct _class_t OBJC_METACLASS_$_DGPerson __attribute__ ((used, section ("__DATA,__objc_data"))) = {
+	0, // &OBJC_METACLASS_$_NSObject,
+	0, // &OBJC_METACLASS_$_NSObject,
+	0, // (void *)&_objc_empty_cache,
+	0, // unused, was (void *)&_objc_empty_vtable,
+	&_OBJC_METACLASS_RO_$_DGPerson,
+};
+
+extern "C" __declspec(dllimport) struct _class_t OBJC_CLASS_$_NSObject;
+
+extern "C" __declspec(dllexport) struct _class_t OBJC_CLASS_$_DGPerson __attribute__ ((used, section ("__DATA,__objc_data"))) = {
+	0, // &OBJC_METACLASS_$_DGPerson,
+	0, // &OBJC_CLASS_$_NSObject,
+	0, // (void *)&_objc_empty_cache,
+	0, // unused, was (void *)&_objc_empty_vtable,
+	&_OBJC_CLASS_RO_$_DGPerson,
+};
+static void OBJC_CLASS_SETUP_$_DGPerson(void ) {
+	OBJC_METACLASS_$_DGPerson.isa = &OBJC_METACLASS_$_NSObject;
+	OBJC_METACLASS_$_DGPerson.superclass = &OBJC_METACLASS_$_NSObject;
+	OBJC_METACLASS_$_DGPerson.cache = &_objc_empty_cache;
+	OBJC_CLASS_$_DGPerson.isa = &OBJC_METACLASS_$_DGPerson;
+	OBJC_CLASS_$_DGPerson.superclass = &OBJC_CLASS_$_NSObject;
+	OBJC_CLASS_$_DGPerson.cache = &_objc_empty_cache;
+}
+#pragma section(".objc_inithooks$B", long, read, write)
+__declspec(allocate(".objc_inithooks$B")) static void *OBJC_CLASS_SETUP[] = {
+	(void *)&OBJC_CLASS_SETUP_$_DGPerson,
+};
+static struct _class_t *L_OBJC_LABEL_CLASS_$ [1] __attribute__((used, section ("__DATA, __objc_classlist,regular,no_dead_strip")))= {
+	&OBJC_CLASS_$_DGPerson,
+};
 static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO = { 0, 2 };

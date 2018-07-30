@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18B3412920FD8504006FF6CA /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B3412820FD8504006FF6CA /* DGPerson.m */; };
-		18BF40F920F8989E00788E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF40F820F8989E00788E72 /* main.m */; };
+		184F4817210EA6CA00772F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 184F4816210EA6CA00772F46 /* main.m */; };
+		184F481F210EA85C00772F46 /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 184F481E210EA85C00772F46 /* DGPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		18BF40F320F8989E00788E72 /* CopyFiles */ = {
+		184F4811210EA6CA00772F46 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,21 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		181AA833210B02C5002FADA9 /* DGPerson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DGPerson.cpp; sourceTree = "<group>"; };
-		181AA835210B0387002FADA9 /* DGPerson_h.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DGPerson_h.cpp; sourceTree = "<group>"; };
-		18B3412720FD8504006FF6CA /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
-		18B3412820FD8504006FF6CA /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
-		18BF40F520F8989E00788E72 /* block的本质问题 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "block的本质问题"; sourceTree = BUILT_PRODUCTS_DIR; };
-		18BF40F820F8989E00788E72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18BF40FF20F89C4300788E72 /* main0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main0.cpp; sourceTree = "<group>"; };
-		18BF410120F8A3DC00788E72 /* main1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main1.cpp; sourceTree = "<group>"; };
-		18BF410320F8A6E700788E72 /* main2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main2.cpp; sourceTree = "<group>"; };
-		18BF410520F8A8A000788E72 /* main3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main3.cpp; sourceTree = "<group>"; };
-		18BF410720F8AD5500788E72 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		184F4813210EA6CA00772F46 /* 一个字符设置bool值 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "一个字符设置bool值"; sourceTree = BUILT_PRODUCTS_DIR; };
+		184F4816210EA6CA00772F46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		184F481D210EA85C00772F46 /* DGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGPerson.h; sourceTree = "<group>"; };
+		184F481E210EA85C00772F46 /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18BF40F220F8989E00788E72 /* Frameworks */ = {
+		184F4810210EA6CA00772F46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,104 +41,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18BF40EC20F8989E00788E72 = {
+		184F480A210EA6CA00772F46 = {
 			isa = PBXGroup;
 			children = (
-				18BF40F720F8989E00788E72 /* block的本质问题 */,
-				18BF40F620F8989E00788E72 /* Products */,
+				184F4815210EA6CA00772F46 /* 一个字符设置bool值 */,
+				184F4814210EA6CA00772F46 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		18BF40F620F8989E00788E72 /* Products */ = {
+		184F4814210EA6CA00772F46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BF40F520F8989E00788E72 /* block的本质问题 */,
+				184F4813210EA6CA00772F46 /* 一个字符设置bool值 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18BF40F720F8989E00788E72 /* block的本质问题 */ = {
+		184F4815210EA6CA00772F46 /* 一个字符设置bool值 */ = {
 			isa = PBXGroup;
 			children = (
-				181AA833210B02C5002FADA9 /* DGPerson.cpp */,
-				181AA835210B0387002FADA9 /* DGPerson_h.cpp */,
-				18BF410720F8AD5500788E72 /* main.cpp */,
-				18BF410520F8A8A000788E72 /* main3.cpp */,
-				18BF410320F8A6E700788E72 /* main2.cpp */,
-				18BF410120F8A3DC00788E72 /* main1.cpp */,
-				18BF40FF20F89C4300788E72 /* main0.cpp */,
-				18BF40F820F8989E00788E72 /* main.m */,
-				18B3412720FD8504006FF6CA /* DGPerson.h */,
-				18B3412820FD8504006FF6CA /* DGPerson.m */,
+				184F4816210EA6CA00772F46 /* main.m */,
+				184F481D210EA85C00772F46 /* DGPerson.h */,
+				184F481E210EA85C00772F46 /* DGPerson.m */,
 			);
-			path = "block的本质问题";
+			path = "一个字符设置bool值";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18BF40F420F8989E00788E72 /* block的本质问题 */ = {
+		184F4812210EA6CA00772F46 /* 一个字符设置bool值 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18BF40FC20F8989E00788E72 /* Build configuration list for PBXNativeTarget "block的本质问题" */;
+			buildConfigurationList = 184F481A210EA6CB00772F46 /* Build configuration list for PBXNativeTarget "一个字符设置bool值" */;
 			buildPhases = (
-				18BF40F120F8989E00788E72 /* Sources */,
-				18BF40F220F8989E00788E72 /* Frameworks */,
-				18BF40F320F8989E00788E72 /* CopyFiles */,
+				184F480F210EA6CA00772F46 /* Sources */,
+				184F4810210EA6CA00772F46 /* Frameworks */,
+				184F4811210EA6CA00772F46 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "block的本质问题";
-			productName = "block的本质问题";
-			productReference = 18BF40F520F8989E00788E72 /* block的本质问题 */;
+			name = "一个字符设置bool值";
+			productName = "一个字符设置bool值";
+			productReference = 184F4813210EA6CA00772F46 /* 一个字符设置bool值 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		18BF40ED20F8989E00788E72 /* Project object */ = {
+		184F480B210EA6CA00772F46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = apple;
 				TargetAttributes = {
-					18BF40F420F8989E00788E72 = {
-						CreatedOnToolsVersion = 9.3;
+					184F4812210EA6CA00772F46 = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 18BF40F020F8989E00788E72 /* Build configuration list for PBXProject "block的本质问题" */;
+			buildConfigurationList = 184F480E210EA6CA00772F46 /* Build configuration list for PBXProject "一个字符设置bool值" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 18BF40EC20F8989E00788E72;
-			productRefGroup = 18BF40F620F8989E00788E72 /* Products */;
+			mainGroup = 184F480A210EA6CA00772F46;
+			productRefGroup = 184F4814210EA6CA00772F46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18BF40F420F8989E00788E72 /* block的本质问题 */,
+				184F4812210EA6CA00772F46 /* 一个字符设置bool值 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18BF40F120F8989E00788E72 /* Sources */ = {
+		184F480F210EA6CA00772F46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BF40F920F8989E00788E72 /* main.m in Sources */,
-				18B3412920FD8504006FF6CA /* DGPerson.m in Sources */,
+				184F4817210EA6CA00772F46 /* main.m in Sources */,
+				184F481F210EA85C00772F46 /* DGPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		18BF40FA20F8989E00788E72 /* Debug */ = {
+		184F4818210EA6CA00772F46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -203,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		18BF40FB20F8989E00788E72 /* Release */ = {
+		184F4819210EA6CA00772F46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,19 +240,17 @@
 			};
 			name = Release;
 		};
-		18BF40FD20F8989E00788E72 /* Debug */ = {
+		184F481B210EA6CB00772F46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		18BF40FE20F8989E00788E72 /* Release */ = {
+		184F481C210EA6CB00772F46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -275,25 +259,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18BF40F020F8989E00788E72 /* Build configuration list for PBXProject "block的本质问题" */ = {
+		184F480E210EA6CA00772F46 /* Build configuration list for PBXProject "一个字符设置bool值" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18BF40FA20F8989E00788E72 /* Debug */,
-				18BF40FB20F8989E00788E72 /* Release */,
+				184F4818210EA6CA00772F46 /* Debug */,
+				184F4819210EA6CA00772F46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18BF40FC20F8989E00788E72 /* Build configuration list for PBXNativeTarget "block的本质问题" */ = {
+		184F481A210EA6CB00772F46 /* Build configuration list for PBXNativeTarget "一个字符设置bool值" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18BF40FD20F8989E00788E72 /* Debug */,
-				18BF40FE20F8989E00788E72 /* Release */,
+				184F481B210EA6CB00772F46 /* Debug */,
+				184F481C210EA6CB00772F46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 18BF40ED20F8989E00788E72 /* Project object */;
+	rootObject = 184F480B210EA6CA00772F46 /* Project object */;
 }

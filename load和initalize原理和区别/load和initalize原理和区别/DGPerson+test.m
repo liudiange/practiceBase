@@ -10,11 +10,11 @@
 
 @implementation DGPerson (test)
 
-//+ (void)load{
-//
-//    NSLog(@"DGPerson (test) --- ") ;
-//
-//}
++ (void)load{
+
+    NSLog(@"DGPerson (test) --- ") ;
+
+}
 
 + (void)initialize {
     NSLog(@"initialize -- DGPerson+test");
