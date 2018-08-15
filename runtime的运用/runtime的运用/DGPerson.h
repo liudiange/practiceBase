@@ -14,5 +14,5 @@
 @property (assign, nonatomic) int age;
 
 -(void)test;
-
++(void)eat;
 @end

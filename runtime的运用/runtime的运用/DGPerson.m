@@ -14,4 +14,7 @@
     
     NSLog(@"__func__ ++++++ %s",__func__);
 }
++(void)eat{
+    NSLog(@"__func__ ++++++ %s",__func__);
+}
 @end

@@ -15,6 +15,9 @@
 		1808A202212124A400238402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808A201212124A400238402 /* main.m */; };
 		1808A20A21212B8000238402 /* DGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808A20921212B8000238402 /* DGPerson.m */; };
 		1808A20D21212BBF00238402 /* DGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1808A20C21212BBF00238402 /* DGCar.m */; };
+		18420C8B212403640093D3A5 /* NSObject+DGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420C8A212403640093D3A5 /* NSObject+DGExtension.m */; };
+		18420C8E212406800093D3A5 /* DGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420C8D212406800093D3A5 /* DGModel.m */; };
+		18420C91212415360093D3A5 /* NSMutableArray+DGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18420C90212415360093D3A5 /* NSMutableArray+DGExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		1808A20921212B8000238402 /* DGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGPerson.m; sourceTree = "<group>"; };
 		1808A20B21212BBF00238402 /* DGCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGCar.h; sourceTree = "<group>"; };
 		1808A20C21212BBF00238402 /* DGCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGCar.m; sourceTree = "<group>"; };
+		18420C89212403640093D3A5 /* NSObject+DGExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DGExtension.h"; sourceTree = "<group>"; };
+		18420C8A212403640093D3A5 /* NSObject+DGExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DGExtension.m"; sourceTree = "<group>"; };
+		18420C8C212406800093D3A5 /* DGModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DGModel.h; sourceTree = "<group>"; };
+		18420C8D212406800093D3A5 /* DGModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGModel.m; sourceTree = "<group>"; };
+		18420C8F212415360093D3A5 /* NSMutableArray+DGExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+DGExtension.h"; sourceTree = "<group>"; };
+		18420C90212415360093D3A5 /* NSMutableArray+DGExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+DGExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +77,16 @@
 				1808A1F3212124A200238402 /* AppDelegate.m */,
 				1808A1F5212124A200238402 /* ViewController.h */,
 				1808A1F6212124A200238402 /* ViewController.m */,
+				18420C8C212406800093D3A5 /* DGModel.h */,
+				18420C8D212406800093D3A5 /* DGModel.m */,
 				1808A20821212B8000238402 /* DGPerson.h */,
 				1808A20921212B8000238402 /* DGPerson.m */,
 				1808A20B21212BBF00238402 /* DGCar.h */,
 				1808A20C21212BBF00238402 /* DGCar.m */,
+				18420C89212403640093D3A5 /* NSObject+DGExtension.h */,
+				18420C8A212403640093D3A5 /* NSObject+DGExtension.m */,
+				18420C8F212415360093D3A5 /* NSMutableArray+DGExtension.h */,
+				18420C90212415360093D3A5 /* NSMutableArray+DGExtension.m */,
 				1808A1F8212124A200238402 /* Main.storyboard */,
 				1808A1FB212124A400238402 /* Assets.xcassets */,
 				1808A1FD212124A400238402 /* LaunchScreen.storyboard */,
@@ -154,6 +169,9 @@
 			files = (
 				1808A1F7212124A200238402 /* ViewController.m in Sources */,
 				1808A20D21212BBF00238402 /* DGCar.m in Sources */,
+				18420C8E212406800093D3A5 /* DGModel.m in Sources */,
+				18420C8B212403640093D3A5 /* NSObject+DGExtension.m in Sources */,
+				18420C91212415360093D3A5 /* NSMutableArray+DGExtension.m in Sources */,
 				1808A202212124A400238402 /* main.m in Sources */,
 				1808A1F4212124A200238402 /* AppDelegate.m in Sources */,
 				1808A20A21212B8000238402 /* DGPerson.m in Sources */,
