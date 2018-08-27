@@ -21,8 +21,16 @@
 @property (assign, nonatomic) os_unfair_lock unFairLock;
 // 互斥锁
 @property (assign, nonatomic) pthread_mutex_t mutexLock;
-
-
+// 条件
+@property (assign, nonatomic) pthread_cond_t condition;
+// 数组
+@property (strong, nonatomic) NSMutableArray *dataArray;
+// 互斥锁 oc层面上的
+@property (strong, nonatomic) NSLock *ocLock;
+// 递归锁 oc层面上的
+@property (strong, nonatomic) NSRecursiveLock *recursiveLock;
+// 条件所 oc层面上的
+@property (strong, nonatomic) NSCondition *conditionLock;
 
 @end
 
@@ -33,6 +41,14 @@
 
     // 初始化自旋锁
 //    self.lock = OS_SPINLOCK_INIT;
+//    self.unFairLock = OS_UNFAIR_LOCK_INIT;
+//    self.ticketsCount = 100;
+//
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil] start];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil] start];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil] start];
+    
+    
 //    self.unFairLock = OS_UNFAIR_LOCK_INIT;
     
 //    // 初始化互斥相关的 第一种创建方式
@@ -64,76 +80,114 @@
 //    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
 //    dispatch_queue_t queue1 = dispatch_queue_create("queue1", DISPATCH_QUEUE_CONCURRENT);
    
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//
+//    dispatch_async(queue, ^{
+//        NSLog(@"任务1");
+//    });
+//    dispatch_async(queue, ^{
+//        NSLog(@"任务2");
+//    });
+//    dispatch_async(queue, ^{
+//        NSLog(@"任务3");
+//    });
+//    // 暂停队列
+//    dispatch_suspend(queue);
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"--------------");
+//        dispatch_async(queue, ^{
+//            NSLog(@"任务4");
+//        });
+//        sleep(5.0);
+//        NSLog(@"++++++++++++++");
+//        dispatch_resume(queue);
+//    });
+//    dispatch_async(queue, ^{
+//        NSLog(@"任务5");
+//    });
 
-    dispatch_async(queue, ^{
-        NSLog(@"任务1");
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"任务2");
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"任务3");
-    });
-    // 暂停队列
-    dispatch_suspend(queue);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"--------------");
-        dispatch_async(queue, ^{
-            NSLog(@"任务4");
-        });
-        sleep(5.0);
-        NSLog(@"++++++++++++++");
-        dispatch_resume(queue);
-    });
-    dispatch_async(queue, ^{
-        NSLog(@"任务5");
-    });
-
+    // 递归锁
+//    pthread_mutexattr_t attr;
+//    pthread_mutexattr_init(&attr);
+//    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+//    pthread_mutex_init(&_mutexLock, &attr);
+//    pthread_mutexattr_destroy(&attr);
+//
+//    [self recursiveTest];
+    
+    // 条件所相关
+//    pthread_mutexattr_t attr;
+//    pthread_mutexattr_init(&attr);
+//    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_DEFAULT);
+//    pthread_mutex_init(&_mutexLock, &attr);
+//    pthread_mutexattr_destroy(&attr);
+//    pthread_cond_init(&_condition, NULL);
+//
+//    self.dataArray = [NSMutableArray array];
+//
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(__removrAction) object:nil] start];
+//
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(__addAction) object:nil] start];
     
     
-    
+    // oc层面的互斥锁
+//    self.ocLock = [[NSLock alloc] init];
+//    self.ticketsCount = 50;
+//    [self testTickAction];
 
+    // oc层面的递归锁
+//    self.recursiveLock = [[NSRecursiveLock alloc] init];
+//    [self recursiveTest];
+    
+    // oc层面的条件所
+    self.conditionLock = [[NSCondition alloc] init];
+    [[[NSThread alloc] initWithTarget:self selector:@selector(__removrAction) object:nil] start];
+    [[[NSThread alloc] initWithTarget:self selector:@selector(__addAction) object:nil] start];
+    
+    
 }
+
 -(void)saleTicket{
     
-//    OSSpinLockLock(&_lock);
-//    NSInteger currentTickets = self.ticketsCount;
-//    currentTickets --;
-//    self.ticketsCount = currentTickets;
-//    NSLog(@"当前剩余的票数为：%zd",currentTickets);
-//    OSSpinLockUnlock(&_lock);
+//        OSSpinLockLock(&_lock);
+//        NSInteger currentTickets = self.ticketsCount;
+//        currentTickets --;
+//        self.ticketsCount = currentTickets;
+//        NSLog(@"当前剩余的票数为：%zd",currentTickets);
+//        OSSpinLockUnlock(&_lock);
     
     
-//    os_unfair_lock_lock(&_unFairLock);
-//    NSInteger currentTickets = self.ticketsCount;
-//    currentTickets --;
-//    self.ticketsCount = currentTickets;
-//    NSLog(@"当前剩余的票数为：%zd",currentTickets);
-//    os_unfair_lock_unlock(&_unFairLock);
-    
-//    if (os_unfair_lock_trylock(&_unFairLock)) {
+//        os_unfair_lock_lock(&_unFairLock);
 //        NSInteger currentTickets = self.ticketsCount;
 //        currentTickets --;
 //        self.ticketsCount = currentTickets;
 //        NSLog(@"当前剩余的票数为：%zd",currentTickets);
 //        os_unfair_lock_unlock(&_unFairLock);
-//    }
     
+    //    if (os_unfair_lock_trylock(&_unFairLock)) {
+    //        NSInteger currentTickets = self.ticketsCount;
+    //        currentTickets --;
+    //        self.ticketsCount = currentTickets;
+    //        NSLog(@"当前剩余的票数为：%zd",currentTickets);
+    //        os_unfair_lock_unlock(&_unFairLock);
+    //    }
+    
+    //    pthread_mutex_lock(&_mutexLock);
+    //    NSInteger currentTickets = self.ticketsCount;
+    //    currentTickets --;
+    //    self.ticketsCount = currentTickets;
+    //    NSLog(@"当前剩余的票数为：%zd",currentTickets);
+    //    pthread_mutex_unlock(&_mutexLock);
 
-    pthread_mutex_lock(&_mutexLock);
+    // oc层面的互斥锁
+    [self.ocLock lock];
     NSInteger currentTickets = self.ticketsCount;
     currentTickets --;
     self.ticketsCount = currentTickets;
     NSLog(@"当前剩余的票数为：%zd",currentTickets);
-    pthread_mutex_unlock(&_mutexLock);
-
-
+    [self.ocLock unlock];
     
 }
-
-
-
 -(void)testMoney{
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_async(queue, ^{
@@ -196,11 +250,68 @@
         
     });
 }
-
-
-
-
-
+#pragma mark 其他方法
+-(void)__removrAction{
+    
+//    pthread_mutex_lock(&_mutexLock);
+//    NSLog(@"__removrAction - begin");
+//    if (self.dataArray.count == 0) {
+//        NSLog(@"等待");
+//        pthread_cond_wait(&_condition, &_mutexLock);
+//
+//    }
+//    [self.dataArray removeLastObject];
+//    NSLog(@"__removrAction - end");
+//    pthread_mutex_unlock(&_mutexLock);
+    
+    [self.conditionLock lock];
+    NSLog(@"__removrAction - begin");
+    if (self.dataArray.count == 0) {
+        NSLog(@"等待");
+        [self.conditionLock wait];
+        
+    }
+    [self.dataArray removeLastObject];
+    NSLog(@"__removrAction - end");
+    [self.conditionLock unlock];
+}
+-(void)__addAction{
+    
+//    pthread_mutex_lock(&_mutexLock);
+//    NSLog(@"__addAction - begin");
+//    [self.dataArray addObject:@"asdasd"];
+//    pthread_mutex_unlock(&_mutexLock);
+//    // 发送一个信号
+//    pthread_cond_signal(&_condition);
+//    NSLog(@"__addAction - end");
+//    // 给所有等待的发送信号 也叫广播
+//    //    pthread_cond_broadcast(&_condition);
+    
+    [self.conditionLock lock];
+    NSLog(@"__addAction - begin");
+    [self.dataArray addObject:@"asdasd"];
+    [self.conditionLock unlock];
+    // 发送一个信号
+    [self.conditionLock signal];
+    NSLog(@"__addAction - end");
+    // 给所有等待的发送信号 也叫广播
+    //   [self.conditionLock broadcast];
+}
+/**
+ 递归的测试
+ */
+- (void)recursiveTest{
+    
+//    pthread_mutex_lock(&_mutexLock);
+//    NSLog(@"哈哈哈哈哈");
+//    [self recursiveTest];
+//    pthread_mutex_unlock(&_mutexLock);
+    
+    [self.recursiveLock lock];
+    NSLog(@"哈哈哈哈哈");
+    [self recursiveTest];
+    [self.recursiveLock unlock];
+}
 -(void)task7{
     
     dispatch_semaphore_t semphore = dispatch_semaphore_create(2);
@@ -453,5 +564,12 @@
         NSLog(@"任务3");
     });
 }
+-(void)dealloc{
+    
+    pthread_mutex_destroy(&_mutexLock);
+    pthread_cond_destroy(&_condition);
+    
+}
+
 
 @end
