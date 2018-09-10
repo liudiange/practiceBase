@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  gcd的使用以及死锁问题
+//  autoreleasePool的研究
 //
-//  Created by apple on 2018/8/22.
+//  Created by apple on 2018/9/10.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (copy, atomic) NSString *name;
 
 @end
 

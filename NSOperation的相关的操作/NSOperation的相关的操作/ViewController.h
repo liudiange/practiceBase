@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  gcd的使用以及死锁问题
+//  NSOperation的相关的操作
 //
-//  Created by apple on 2018/8/22.
+//  Created by apple on 2018/8/28.
 //  Copyright © 2018年 apple. All rights reserved.
 //
 
@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (copy, atomic) NSString *name;
 
 @end
 

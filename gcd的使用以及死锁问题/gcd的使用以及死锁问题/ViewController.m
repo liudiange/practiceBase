@@ -16,6 +16,7 @@
 
 @property (assign, nonatomic) NSInteger ticketsCount;
 @property (assign, nonatomic) NSInteger beginMoney;
+
 // 自旋锁
 @property (assign, nonatomic) OSSpinLock lock;
 @property (assign, nonatomic) os_unfair_lock unFairLock;
@@ -31,13 +32,39 @@
 @property (strong, nonatomic) NSRecursiveLock *recursiveLock;
 // 条件所 oc层面上的
 @property (strong, nonatomic) NSCondition *conditionLock;
+// 条件所 更加牛逼的条件所
+@property (strong, nonatomic) NSConditionLock *fineConditionLock;
+// 串行队列
+@property (strong, nonatomic) dispatch_queue_t serialQueue;
+// 信号量
+@property (strong, nonatomic) dispatch_semaphore_t semaphore;
+// 读写锁
+@property (assign, nonatomic) pthread_rwlock_t rwlock;
+// 栅栏的队列
+@property (strong, nonatomic) dispatch_queue_t barrierQueue;
 
 @end
 
 @implementation ViewController
+@synthesize name = _name;
+
+-(void)setName:(NSString *)name{
+    // 加锁
+    _name = name;
+    // 解锁
+}
+-(NSString *)name {
+    // 加锁
+    NSString *str = _name;
+    // 解锁
+    return str;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
     // 初始化自旋锁
 //    self.lock = OS_SPINLOCK_INIT;
@@ -140,11 +167,65 @@
 //    [self recursiveTest];
     
     // oc层面的条件所
-    self.conditionLock = [[NSCondition alloc] init];
-    [[[NSThread alloc] initWithTarget:self selector:@selector(__removrAction) object:nil] start];
-    [[[NSThread alloc] initWithTarget:self selector:@selector(__addAction) object:nil] start];
+//    self.conditionLock = [[NSCondition alloc] init];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(__removrAction) object:nil] start];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(__addAction) object:nil] start];
+
+    // 更加牛逼的条件锁
+//    self.fineConditionLock = [[NSConditionLock alloc] initWithCondition:0];
+//    self.fineConditionLock = [[NSConditionLock alloc] init];
+//
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(threeAction) object:nil] start];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(twoAction) object:nil] start];
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(oneAction) object:nil] start];
     
+    // 串行队列执行卖票
+//    self.serialQueue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
+//    self.ticketsCount = 50;
+//    [self testTickAction];
     
+    // 信号量卖票
+//    self.semaphore = dispatch_semaphore_create(1);
+//    self.ticketsCount = 50;
+//    [self testTickAction];
+
+    // @synchronized 线程同步
+//    self.ticketsCount = 50;
+//    [self testTickAction];
+    
+    // 读写锁
+//    pthread_rwlock_init(&_rwlock, NULL);
+//    dispatch_queue_t queue = dispatch_queue_create("name", DISPATCH_QUEUE_CONCURRENT);
+//    for (NSInteger index = 0; index < 10; index ++) {
+//        dispatch_async(queue, ^{
+//            [self readAction];
+//        });
+//        dispatch_async(queue, ^{
+//            [self writeAction];
+//        });
+//    }
+    // 栅栏方法
+    self.barrierQueue = dispatch_queue_create("name", DISPATCH_QUEUE_CONCURRENT);
+    for (NSInteger index = 0; index < 10; index ++) {
+        [self readAction];
+        [self readAction];
+        [self writeAction];
+        [self writeAction];
+    }
+    
+}
+-(void)readAction{
+    dispatch_async(self.barrierQueue, ^{
+        sleep(1.0);
+        NSLog(@"readAction");
+    });
+}
+-(void)writeAction{
+    dispatch_barrier_async(self.barrierQueue, ^{
+        sleep(1.0);
+        NSLog(@"writeAction");
+
+    });
 }
 
 -(void)saleTicket{
@@ -180,13 +261,37 @@
     //    pthread_mutex_unlock(&_mutexLock);
 
     // oc层面的互斥锁
-    [self.ocLock lock];
-    NSInteger currentTickets = self.ticketsCount;
-    currentTickets --;
-    self.ticketsCount = currentTickets;
-    NSLog(@"当前剩余的票数为：%zd",currentTickets);
-    [self.ocLock unlock];
+//    [self.ocLock lock];
+//    NSInteger currentTickets = self.ticketsCount;
+//    currentTickets --;
+//    self.ticketsCount = currentTickets;
+//    NSLog(@"当前剩余的票数为：%zd",currentTickets);
+//    [self.ocLock unlock];
     
+    
+    // 串行队列卖票
+//    dispatch_sync(self.serialQueue, ^{
+//        NSInteger currentTickets = self.ticketsCount;
+//        currentTickets --;
+//        self.ticketsCount = currentTickets;
+//        NSLog(@"当前剩余的票数为：%zd",currentTickets);
+//    });
+    
+    // 信号量卖票
+//    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+//    NSInteger currentTickets = self.ticketsCount;
+//    currentTickets --;
+//    self.ticketsCount = currentTickets;
+//    NSLog(@"当前剩余的票数为：%zd",currentTickets);
+//    dispatch_semaphore_signal(self.semaphore);
+
+    //@synchronized 枷锁
+    @synchronized(self){
+        NSInteger currentTickets = self.ticketsCount;
+        currentTickets --;
+        self.ticketsCount = currentTickets;
+        NSLog(@"当前剩余的票数为：%zd",currentTickets);
+    }
 }
 -(void)testMoney{
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
@@ -251,6 +356,27 @@
     });
 }
 #pragma mark 其他方法
+- (void)oneAction{
+    NSLog(@"oneAction - begin");
+    [self.fineConditionLock lock];
+    NSLog(@"oneAction");
+    [self.fineConditionLock unlockWithCondition:2];
+    
+}
+- (void)twoAction{
+    
+    NSLog(@"twoAction - begin");
+    [self.fineConditionLock lockWhenCondition:2];
+    NSLog(@"twoAction");
+    [self.fineConditionLock unlockWithCondition:3];
+}
+- (void)threeAction{
+    
+    NSLog(@"threeAction - begin");
+    [self.fineConditionLock lockWhenCondition:3];
+    NSLog(@"threeAction");
+    [self.fineConditionLock unlock];
+}
 -(void)__removrAction{
     
 //    pthread_mutex_lock(&_mutexLock);
@@ -568,7 +694,7 @@
     
     pthread_mutex_destroy(&_mutexLock);
     pthread_cond_destroy(&_condition);
-    
+    pthread_rwlock_destroy(&_rwlock);
 }
 
 
